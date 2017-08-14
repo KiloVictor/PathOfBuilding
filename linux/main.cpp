@@ -41,6 +41,9 @@ void POBWindow::paintGL() {
   curSubLayer = 0;
   glColor4f(0, 0, 0, 0);
   painter = new QPainter(this);
+  
+  qreal pixelRatio = 1/devicePixelRatioF();
+  painter->scale(pixelRatio, pixelRatio);
 
   bool clean = true;
   for (int i = 0; i < subScriptList.size(); i++) {
